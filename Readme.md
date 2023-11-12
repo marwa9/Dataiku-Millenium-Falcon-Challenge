@@ -41,6 +41,7 @@ computes odds using functions from [graph_paths.py](./utils/graph_paths.py) and 
    (ii) makes a API request to the [backend.py](./backend.py) to fetch the calculated odds and update the user interface with the result.
 
    **How to use front-end**
+
    Run simultaneously: 
    ```
    python backend.py
