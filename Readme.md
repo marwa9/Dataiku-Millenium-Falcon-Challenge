@@ -7,8 +7,10 @@ while avoiding encounters with bounty hunters.
 
 Following the example provided in "millennium-falcon.json" file, the planets (Tatooine, Hoth, Dagobah, and Endor) form a connected graph, 
 with Tatooine as the departure point and Endor as the arrival point. 
- 
-<img src="images/planets_graph.PNG" width="300" height="200">
+
+<p align="center">
+<img src="images/planets_graph.PNG" width="400" height="300">
+</p>
 
 I therefore approached the odds calculation as a problem-solving task and followed these steps:
 
