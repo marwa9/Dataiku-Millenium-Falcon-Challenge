@@ -3,8 +3,8 @@ This repo contains the code base for the Giskard interview technical exercice.
 The problem details and resources can be found in [Giskard Test](https://github.com/lioncowlionant/developer-test).
 
 It consists of: (i) Finding a path from a source planet (departure) to a target planet (arrival) within a specified time 
-while avoiding encounters with bounty hunters, and (ii) Calcularing the odds that the Millennium Falcon reaches Endor in 
-time and saves the galaxy.
+while avoiding encounters with bounty hunters, and (ii) Calculating the chance of Millennium Falcon to reach target planet in 
+time and save the galaxy (odds).
 
 
 Following the example provided in "millennium-falcon.json" file, the planets (Tatooine, Hoth, Dagobah, and Endor) form a connected graph, 
