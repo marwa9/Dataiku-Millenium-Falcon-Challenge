@@ -1,0 +1,4 @@
+{
+  "routes_db_path": "./examples/example1",
+  "millennium_falcon_path" : "./example1/millennium-falcon.json"
+}

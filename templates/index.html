@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Millennium Falcon Odds Calculator</title>
+</head>
+<body>
+    <h1>Millennium Falcon Odds Calculator</h1>
+    
+    <form id="uploadForm" action="/calculate_odds" method="post" enctype="multipart/form-data">
+        <label for="file">Upload Empire JSON File:</label>
+        <input type="file" name="file" id="file" accept=".json">
+        <button type="submit">Calculate Odds</button>
+    </form>
+    
+    <div id="result" style="display: none;">
+        <h2>Probability of Success:</h2>
+        <p id="odds"></p>
+    </div>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+
+            fetch('/calculate_odds', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.json())
+            .then(data => {
+                const resultDiv = document.getElementById('result');
+                const oddsP = document.getElementById('odds');
+                
+                if (data.odds !== "Error") {
+                    resultDiv.style.display = 'block';
+                    oddsP.textContent = data.odds + '%';
+                } else {
+                    resultDiv.style.display = 'none';
+                }
+            })
+            .catch(error => console.error(error));
+        });
+    </script>
+</body>
+</html>
