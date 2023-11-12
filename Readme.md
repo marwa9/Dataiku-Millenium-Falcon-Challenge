@@ -8,9 +8,9 @@ while avoiding encounters with bounty hunters.
 Following the example provided in "millennium-falcon.json" file, the planets (Tatooine, Hoth, Dagobah, and Endor) form a connected graph, 
 with Tatooine as the departure point and Endor as the arrival point. 
  
-<img src="images/planets_graph.png" width="300" height="200">
+<img src="images/planets_graph.PNG" width="300" height="200">
 
-Hence, I approached the odds calculation as a problem-solving task and followed these steps:
+I therefore approached the odds calculation as a problem-solving task and followed these steps:
 
 1. Indentify Edges connecting planets (nodes) and the formed graph.
 
@@ -28,17 +28,17 @@ Code details:
 2. [odds_calculation.py](./utils/odds_calculation.py) includes the functions needed to verify possible
 paths and calculate calculate the chances of the Millennium Falcon reaching Endor on time and saving the galaxy. 
 
-3. [config_backend.py](./config_files/config_backend) contains paths of "millennium-falcon.json" and routes sqlite database.
+3. [config_backend.py](./config_files/config_backend.json) contains paths of "millennium-falcon.json" and routes sqlite database.
 
-3. [backend.py](./backend.py) (Back-end) reads the json files (related to Millennium Falcon and Empire) and 
+4. [backend.py](./backend.py) (Back-end) reads the json files (related to Millennium Falcon and Empire) and 
 computes odds using functions from [graph_paths.py](./utils/graph_paths.py) and [odds_calculation.py](./utils/odds_calculation.py).
 
-4. Front-end:
+5. Front-end:
    - [index.html](./templates/index.html) represents a user interface template to upload the "empire.json" file.
    - [app_Frontend.py](./app_Frontend.py): (i) reads and sends json files to the backend using an API request. Then,
    (ii) makes a API request to the [backend.py](./backend.py) to fetch the calculated odds and update the user interface with the result.
 
-   ** How to use front-end **
+   **How to use front-end**
    Run simultaneously: 
    ```
    python backend.py
@@ -46,13 +46,13 @@ computes odds using functions from [graph_paths.py](./utils/graph_paths.py) and 
    ```
    I runned the web application on my local machine using the backend URL (obtained after running [backend.py](./backend.py)) .
 
-I used Flask framework for both front-end and back-end.
+   Note: I used Flask framework for both front-end and back-end.
 
 
-5. [app_CLI.py](./app_CLI.py) (CLI) takes two file paths as input, one for "millennium-falcon.json" and the other for "empire.json 
+6. [app_CLI.py](./app_CLI.py) (CLI) takes two file paths as input, one for "millennium-falcon.json" and the other for "empire.json 
 and reads their content. It sends it to the [backend.py](./backend.py) and prints odds.
 
-   ** How to use CLI ** 
+   **How to use CLI** 
 
    First, run [backend.py](./backend.py):
    ```
@@ -61,7 +61,7 @@ and reads their content. It sends it to the [backend.py](./backend.py) and print
 
    Second, run [app_CLI.py](./app_CLI.py):
    ```
-   python app_CLI.py examples/example1/millennium-falcon.json examples/example4/empire.json
+   python app_CLI.py examples/example1/millennium-falcon.json examples/example1/empire.json
    ```
 
 The specified packages and versions used to run this repository codes are listed in [requirements.yml](./requirements.yml). 

@@ -26,7 +26,7 @@ def paths_verification(autonomy,countdown,dict_planets,all_paths,edges_distances
         s = np.array(inter_dist_planets).sum()
         refuel = s // autonomy
         arrival_margin = countdown - (s+refuel)
-        # Discard paths requiring more days than it required or having edges requiring 
+        # Discard paths requiring more days than countdown, or with edges whose distance > autonomy 
         if not(all(i <= autonomy for i in inter_dist_planets)) or (arrival_margin<0):
             continue
         else:
@@ -41,12 +41,12 @@ def capture_frequency(possible_paths,inter_distances,arrival_margins,
                       autonomy,dict_planets,bounty_hunters_dict):
     captured_times = []
     for i,path in enumerate(possible_paths):
-        j = 0 
+        j = 0 # variable to identify where the Millennium Falcon is currently parked  
         arrival_day = inter_distances[i][0]
         wait_capacity = arrival_margins[i]
         remained_autonomy = autonomy
         schedule_dict = dict()
-        k = 0
+        k = 0 # variable of capture frequency in path i
         while j<len(inter_distances[i])-1:     
             if (get_key(dict_planets,path[j+1]) in bounty_hunters_dict[str(arrival_day)]) and (wait_capacity>0):
                 wait_capacity -=1
@@ -62,13 +62,12 @@ def capture_frequency(possible_paths,inter_distances,arrival_margins,
                 else:
                     arrival_day +=1
                     schedule_dict[arrival_day] = get_key(dict_planets,path[j+1])                     
-                j +=1
-                
+                j +=1    
         for key in schedule_dict.keys():
             if schedule_dict[key] in bounty_hunters_dict[str(key)]:
                 k +=1           
         captured_times.append(k) 
-    return min(captured_times)
+    return min(captured_times) # Take the min to consider only the optimized path
 
 def capture_probability(k):
     if k == 0:
