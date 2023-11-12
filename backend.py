@@ -149,8 +149,9 @@ def compute_odds(autonomy,dict_planets,all_paths,edges_distances):
 @app.route('/main', methods=['POST'])  
 def main():
     global loaded_millennium_falcon, autonomy, dict_planets, all_paths, edges_distances
+    # Print the variable to check if calculations are repeated or not
     app.logger.debug("loaded_millennium_falcon: %s", loaded_millennium_falcon)
-    # Check if millennium_falcon is already uploaded and thus avoid redundant find_all_paths calculations
+    # Check wether millennium_falcon has already been uploaded to avoid redundant find_all_paths calculations
     if loaded_millennium_falcon is None:
         response1 = find_all_paths()
         loaded_millennium_falcon = "Done"

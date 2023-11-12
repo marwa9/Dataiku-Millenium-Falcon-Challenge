@@ -31,7 +31,7 @@ except Exception as e:
     exit(1)
 
 # Define the backend URL, identified after running backend.py
-backend_url = "http://127.0.0.1:5000"  # identified after running backend.py
+backend_url = "http://127.0.0.1:5000"
 
 # Send the data to the backend for odds calculation
 try:
