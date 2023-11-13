@@ -25,19 +25,19 @@ I therefore approached the odds calculation as a problem-solving task and follow
 4. Calculate probability of success (odds) based on bounty_hunters information.
 
  
-Code details: 
+**Code details** 
 
 1. [graph_paths.py](./utils/graph_paths.py) includes the necessary functions to look for all possible paths from departure to arrival.
 
 2. [odds_calculation.py](./utils/odds_calculation.py) includes the functions needed to verify possible
 paths and calculate the chances of the Millennium Falcon reaching arrival planet on time and saving the galaxy. 
 
-3. [config_backend.py](./config_files/config_backend.json) contains paths of "millennium-falcon.json" and routes sqlite database.
+3. [config_backend.json](./config_files/config_backend.json) contains paths of "millennium-falcon.json" and routes sqlite database.
 
-4. Back-end: [backend.py](./backend.py) reads the json files (related to Millennium Falcon and Empire) and 
+4. **Back-end**: [backend.py](./backend.py) reads the json files (related to Millennium Falcon and Empire) and 
 computes odds using functions from [graph_paths.py](./utils/graph_paths.py) and [odds_calculation.py](./utils/odds_calculation.py).
 
-5. Front-end:
+5. **Front-end**:
    - [index.html](./templates/index.html) represents a user interface template to upload the "empire.json" file.
    - [app_Frontend.py](./app_Frontend.py): (i) reads and sends json files to the backend using an API request. Then,
    (ii) makes an API request to the [backend.py](./backend.py) to fetch the calculated odds and update the user interface with the result.
@@ -51,10 +51,10 @@ computes odds using functions from [graph_paths.py](./utils/graph_paths.py) and 
    ```
    I runned the web application on my local machine using the backend URL (obtained after running [backend.py](./backend.py)) .
 
-   Note: I used the Flask framework for the front-end and back-end.
+   **Note**: I used the Flask framework for the front-end and back-end.
 
 
-6. CLI: [app_CLI.py](./app_CLI.py) takes two file paths as input, one for "millennium-falcon.json" and the other for "empire.json 
+6. **CLI**: [app_CLI.py](./app_CLI.py) takes two file paths as input, one for "millennium-falcon.json" and the other for "empire.json 
 and reads their content. It sends it to the [backend.py](./backend.py) and prints odds.
 
    **How to use CLI** 
