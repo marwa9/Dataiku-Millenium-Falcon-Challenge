@@ -38,13 +38,12 @@ def paths_verification(autonomy,countdown,dict_planets,all_paths,edges_distances
 # Find the best way to reach arrival planet i.e., avoid being captured by bounting hunters
 # as much as possible
 def capture_frequency(possible_paths,inter_distances,arrival_margins,
-                      autonomy,dict_planets,bounty_hunters_dict):
+                      dict_planets,bounty_hunters_dict):
     captured_times = []
     for i,path in enumerate(possible_paths):
         j = 0 # variable to identify where the Millennium Falcon is currently parked  
         arrival_day = inter_distances[i][0]
         wait_capacity = arrival_margins[i]
-        remained_autonomy = autonomy
         schedule_dict = dict()
         k = 0 # variable of capture frequency in path i
         while j<len(inter_distances[i])-1:     
@@ -54,14 +53,8 @@ def capture_frequency(possible_paths,inter_distances,arrival_margins,
             else:
                 if j==0:
                     schedule_dict[arrival_day] = get_key(dict_planets,path[j+1]) 
-                remained_autonomy -= inter_distances[i][j]
-                if remained_autonomy < inter_distances[i][j+1]:
-                    arrival_day +=1
-                    schedule_dict[arrival_day] = get_key(dict_planets,path[j+1]) 
-                    remained_autonomy = autonomy
-                else:
-                    arrival_day +=1
-                    schedule_dict[arrival_day] = get_key(dict_planets,path[j+1])                     
+                arrival_day +=1
+                schedule_dict[arrival_day] = get_key(dict_planets,path[j+1])                     
                 j +=1    
         for key in schedule_dict.keys():
             if schedule_dict[key] in bounty_hunters_dict[str(key)]:

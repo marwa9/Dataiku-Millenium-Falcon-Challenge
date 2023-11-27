@@ -134,7 +134,7 @@ def compute_odds(autonomy,dict_planets,all_paths,edges_distances):
         # Execute if possible_paths != [] otherwise odds = 0%
         if possible_paths != []:
             captured_times = capture_frequency(possible_paths,inter_distances,arrival_margins,
-                                                autonomy,dict_planets,bounty_hunters_dict)
+                                                dict_planets,bounty_hunters_dict)
             odds = 1 - capture_probability(captured_times)
             if odds<0: # If the  millennium falcon was captured several times
                 odds = 0
