@@ -1,4 +1,4 @@
-name: Giskard_interview
+name: Millenium_Falcon_Challenge
 channels:
   - defaults
 dependencies:
@@ -191,4 +191,4 @@ dependencies:
       - numpy==1.26.1
       - watchdog==3.0.0
       - werkzeug==3.0.1
-prefix: C:\Users\Marwa\anaconda3\envs\Giskard_interview
+prefix: C:\Users\anaconda3\envs\Millenium_Falcon_Challenge

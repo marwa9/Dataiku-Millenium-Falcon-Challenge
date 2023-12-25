@@ -1,6 +1,6 @@
-This repo contains the code base for the Giskard interview technical exercice.
+This repo contains the code base for the Dataiku Millenium Falcon Challenge.
 
-The problem details and resources can be found in [Giskard Test](https://github.com/lioncowlionant/developer-test).
+The problem details and resources can be found in [Dataiku Test](https://github.com/dataiku/millenium-falcon-challenge).
 
 It consists of: (i) Finding a path from a source planet (departure) to a target planet (arrival) within a specified time 
 while avoiding encounters with bounty hunters, and (ii) Calculating the chance of Millennium Falcon to reach target planet in 
